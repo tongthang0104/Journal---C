@@ -41,6 +41,5 @@ static NSString *const TimestampKey = @"timestamp";
              };
 }
     
-
 @end
 

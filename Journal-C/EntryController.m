@@ -23,6 +23,8 @@ static NSString * const EntriesKey = @"entries";
     [self saveToPersistentStorage];
 }
 
+#pragma mark - ShareInstance
+
 + (EntryController *)shareInstance {
     static EntryController *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -33,7 +35,7 @@ static NSString * const EntriesKey = @"entries";
     return sharedInstance;
 }
 
-
+#pragma mark - PersistentStorage
 -(void)saveToPersistentStorage {
     //take self.entries, covert entries to dictionaries, save dictionaries to NSUserDefaults, synchronize NSUserDefaults
     NSMutableArray *entryDictionaries = [NSMutableArray new];

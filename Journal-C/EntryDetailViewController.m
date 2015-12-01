@@ -12,6 +12,7 @@
 
 @interface EntryDetailViewController () <UITextFieldDelegate>
 
+#pragma mark - Properties
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *textTextView;
 
@@ -24,7 +25,7 @@
     [self updateWithEntry: self.entry];
 }
 
-//updateWithEntry
+#pragma mark - UpdateWithEntry
 
 -(void)updateWithEntry: (Entry *)entry {
     
@@ -35,6 +36,7 @@
     }
 }
 
+#pragma mark: - Action
 - (IBAction)clearButtonTapped:(id)sender {
     self.titleTextField.text = @"";
     self.textTextView.text = @"";
@@ -56,11 +58,12 @@
     [self.navigationController popViewControllerAnimated:true];
 }
 
-#pragma Mark: -TextField delegat]
+#pragma mark: -TextField delegate
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return true;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
