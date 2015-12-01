@@ -8,7 +8,6 @@
 
 #import "Entry.h"
 
-
 static NSString *const TitleKey = @"title";
 static NSString *const TextKey = @"text";
 static NSString *const TimestampKey = @"timestamp";
@@ -24,11 +23,22 @@ static NSString *const TimestampKey = @"timestamp";
     return self;
 }
 
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (self) {
+        self.title = dictionary[TitleKey];
+        self.text = dictionary[TextKey];
+        self.timestamp = dictionary[TimestampKey];
+    }
+    return self;
+}
+
 -(NSDictionary *)dictionaryCopy {
-    
-    
-    
-    
+    return @{
+             TitleKey: self.title,
+             TextKey: self.text,
+             TimestampKey: self.timestamp
+             };
 }
     
 
