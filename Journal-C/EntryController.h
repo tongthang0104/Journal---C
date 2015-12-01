@@ -7,16 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Entry.h"
 @interface EntryController : NSObject
 
-//need property of entries Array
 
-//add entry -> void
+@property (strong, nonatomic)NSMutableArray *entries;
 
-//remove entry -> void
+-(void)addEntries:(Entry *)entry;
+-(void)removeEntries:(Entry *)entry;
 
-//shareInstance
 + (EntryController *)shareInstance;
 
 @end

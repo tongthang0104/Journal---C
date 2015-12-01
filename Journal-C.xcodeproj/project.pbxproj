@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DE9B94E61C0E12D800EEAC1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9B94E51C0E12D800EEAC1B /* main.m */; };
 		DE9B94E91C0E12D800EEAC1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9B94E81C0E12D800EEAC1B /* AppDelegate.m */; };
-		DE9B94EC1C0E12D800EEAC1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9B94EB1C0E12D800EEAC1B /* ViewController.m */; };
 		DE9B94EF1C0E12D800EEAC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9B94ED1C0E12D800EEAC1B /* Main.storyboard */; };
 		DE9B94F11C0E12D800EEAC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9B94F01C0E12D800EEAC1B /* Assets.xcassets */; };
 		DE9B94F41C0E12D800EEAC1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9B94F21C0E12D800EEAC1B /* LaunchScreen.storyboard */; };
@@ -43,8 +42,6 @@
 		DE9B94E51C0E12D800EEAC1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE9B94E71C0E12D800EEAC1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE9B94E81C0E12D800EEAC1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DE9B94EA1C0E12D800EEAC1B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DE9B94EB1C0E12D800EEAC1B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DE9B94EE1C0E12D800EEAC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE9B94F01C0E12D800EEAC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE9B94F31C0E12D800EEAC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,18 +110,9 @@
 		DE9B94E31C0E12D800EEAC1B /* Journal-C */ = {
 			isa = PBXGroup;
 			children = (
-				DE9B94E71C0E12D800EEAC1B /* AppDelegate.h */,
-				DE9B94E81C0E12D800EEAC1B /* AppDelegate.m */,
-				DE9B94EA1C0E12D800EEAC1B /* ViewController.h */,
-				DE9B94EB1C0E12D800EEAC1B /* ViewController.m */,
-				DE9B94ED1C0E12D800EEAC1B /* Main.storyboard */,
-				DE9B95201C0E2BE200EEAC1B /* EntryListTableViewController.h */,
-				DE9B95211C0E2BE200EEAC1B /* EntryListTableViewController.m */,
-				DE9B95231C0E2BEE00EEAC1B /* EntryDetailViewController.h */,
-				DE9B95241C0E2BEE00EEAC1B /* EntryDetailViewController.m */,
-				DE9B94F01C0E12D800EEAC1B /* Assets.xcassets */,
-				DE9B94F21C0E12D800EEAC1B /* LaunchScreen.storyboard */,
-				DE9B94F51C0E12D800EEAC1B /* Info.plist */,
+				DE9B95281C0E53B100EEAC1B /* Views */,
+				DE9B95271C0E53A000EEAC1B /* Controller */,
+				DE9B95261C0E539700EEAC1B /* Model */,
 				DE9B94E41C0E12D800EEAC1B /* Supporting Files */,
 			);
 			path = "Journal-C";
@@ -133,11 +121,13 @@
 		DE9B94E41C0E12D800EEAC1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DE9B951A1C0E26F000EEAC1B /* Entry.h */,
-				DE9B951B1C0E26F000EEAC1B /* Entry.m */,
-				DE9B951D1C0E289E00EEAC1B /* EntryController.h */,
-				DE9B951E1C0E289E00EEAC1B /* EntryController.m */,
+				DE9B94E71C0E12D800EEAC1B /* AppDelegate.h */,
+				DE9B94E81C0E12D800EEAC1B /* AppDelegate.m */,
+				DE9B94ED1C0E12D800EEAC1B /* Main.storyboard */,
+				DE9B94F21C0E12D800EEAC1B /* LaunchScreen.storyboard */,
+				DE9B94F01C0E12D800EEAC1B /* Assets.xcassets */,
 				DE9B94E51C0E12D800EEAC1B /* main.m */,
+				DE9B94F51C0E12D800EEAC1B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,6 +148,35 @@
 				DE9B950B1C0E12D800EEAC1B /* Info.plist */,
 			);
 			path = "Journal-CUITests";
+			sourceTree = "<group>";
+		};
+		DE9B95261C0E539700EEAC1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE9B951A1C0E26F000EEAC1B /* Entry.h */,
+				DE9B951B1C0E26F000EEAC1B /* Entry.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DE9B95271C0E53A000EEAC1B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE9B951D1C0E289E00EEAC1B /* EntryController.h */,
+				DE9B951E1C0E289E00EEAC1B /* EntryController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DE9B95281C0E53B100EEAC1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE9B95201C0E2BE200EEAC1B /* EntryListTableViewController.h */,
+				DE9B95211C0E2BE200EEAC1B /* EntryListTableViewController.m */,
+				DE9B95231C0E2BEE00EEAC1B /* EntryDetailViewController.h */,
+				DE9B95241C0E2BEE00EEAC1B /* EntryDetailViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +311,6 @@
 			files = (
 				DE9B951F1C0E289E00EEAC1B /* EntryController.m in Sources */,
 				DE9B951C1C0E26F000EEAC1B /* Entry.m in Sources */,
-				DE9B94EC1C0E12D800EEAC1B /* ViewController.m in Sources */,
 				DE9B94E91C0E12D800EEAC1B /* AppDelegate.m in Sources */,
 				DE9B95221C0E2BE200EEAC1B /* EntryListTableViewController.m in Sources */,
 				DE9B95251C0E2BEE00EEAC1B /* EntryDetailViewController.m in Sources */,
@@ -520,6 +538,7 @@
 				DE9B95101C0E12D800EEAC1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE9B95111C0E12D800EEAC1B /* Build configuration list for PBXNativeTarget "Journal-CTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +547,7 @@
 				DE9B95131C0E12D800EEAC1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE9B95141C0E12D800EEAC1B /* Build configuration list for PBXNativeTarget "Journal-CUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +556,7 @@
 				DE9B95161C0E12D800EEAC1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

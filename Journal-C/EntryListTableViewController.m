@@ -7,6 +7,8 @@
 //
 
 #import "EntryListTableViewController.h"
+#import "EntryDetailViewController.h"
+#import "EntryController.h"
 
 @interface EntryListTableViewController ()
 
@@ -24,6 +26,11 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -31,17 +38,16 @@
 
 #pragma mark - Table view data source
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 0;
+    return [EntryController shareInstance].entries.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    Entry *entry = [EntryController shareInstance].entries[indexPath.row];
+    cell.textLabel.text = entry.title;
     
     return cell;
 }
@@ -49,11 +55,11 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        Entry *entry = [EntryController shareInstance].entries[indexPath.row];
+        [[EntryController shareInstance] removeEntries:entry];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - Navigation
@@ -62,7 +68,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
    
     //segue.identifier
-    //indexPath
+    if ([segue.identifier isEqualToString:@"toDetailView"]) {
+        EntryDetailViewController *detailViewController = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        Entry *entries = [EntryController shareInstance].entries[indexPath.row];
+        detailViewController.entry = entries;
+    }
 }
 
 

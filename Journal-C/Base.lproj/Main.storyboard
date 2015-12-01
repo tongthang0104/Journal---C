@@ -26,7 +26,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="5XC-uS-ldw" kind="show" id="wbW-T1-aH0"/>
+                                    <segue destination="5XC-uS-ldw" kind="show" identifier="toDetailView" id="wbW-T1-aH0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" id="gS3-Mp-IUM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="A7E-NY-8tA">
                             <connections>
-                                <segue destination="5XC-uS-ldw" kind="show" id="72C-DM-Rvv"/>
+                                <segue destination="5XC-uS-ldw" kind="show" identifier="addEntry" id="72C-DM-Rvv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -139,6 +139,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wbW-T1-aH0"/>
+        <segue reference="72C-DM-Rvv"/>
     </inferredMetricsTieBreakers>
 </document>

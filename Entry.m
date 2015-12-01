@@ -15,24 +15,22 @@ static NSString *const TimestampKey = @"timestamp";
 
 @implementation Entry
 
-//implement initWithName
-
-
-
-
+-(instancetype)initWithTitle:(NSString *)title text:(NSString *)text timepstamp:(NSDate *)timestamp {
+    if (self) {
+        self.title = title;
+        self.text = text;
+        self.timestamp = timestamp;
+    }
+    return self;
+}
 
 -(NSDictionary *)dictionaryCopy {
     
-    //return 
     
     
     
 }
-// call initWithDictionary
-
-
-
-
-
+    
 
 @end
+

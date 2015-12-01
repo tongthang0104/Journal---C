@@ -7,6 +7,8 @@
 //
 
 #import "EntryDetailViewController.h"
+#import "EntryController.h"
+#import "Entry.h"
 
 @interface EntryDetailViewController () <UITextFieldDelegate>
 
@@ -19,16 +21,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self updateWithEntry: self.entry];
 }
 
 //updateWithEntry
 
-- (IBAction)clearButtonTapped:(id)sender {
+-(void)updateWithEntry: (Entry *)entry {
     
+    if (entry) {
+        self.entry = entry;
+        self.titleTextField.text = entry.title;
+        self.textTextView.text = entry.text;
+    }
+}
+
+- (IBAction)clearButtonTapped:(id)sender {
+    self.titleTextField.text = @"";
+    self.textTextView.text = @"";
 }
 - (IBAction)saveButtonTapped:(id)sender {
-    
+    if (self.entry) {
+        self.titleTextField.text = self.entry.title;
+        self.textTextView.text = self.entry.text;
+        self.entry.timestamp = [NSDate date];
+    } else {
+        Entry *newEntry = [[Entry alloc] initWithTitle:self.titleTextField.text text:self.textTextView.text timepstamp: [NSDate date]];
+        [[EntryController shareInstance] addEntries:newEntry];
+        self.entry = newEntry;
+    }
 }
 
 #pragma Mark: -TextField delegat]
