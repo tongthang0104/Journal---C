@@ -48,6 +48,7 @@
     
     Entry *entry = [EntryController shareInstance].entries[indexPath.row];
     cell.textLabel.text = entry.title;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", entry.timestamp];
     
     return cell;
 }

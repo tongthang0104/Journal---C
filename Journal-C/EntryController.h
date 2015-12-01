@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Entry.h"
+
+
 @interface EntryController : NSObject
 
 
